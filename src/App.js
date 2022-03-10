@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { useState, useEffect } from "react";
+
+import {GlobalStyle} from './styles/styles';
+import logoStarWars from './assets/images/logoStarWars.png';  
+
+import ListShip from "./components/listShip/listShip";
+
+import axios from "axios";
+
+const App = (_) => {
+
+  const [ships, setShips] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`https://swapi.py4e.com/api/starships/`)
+      .then((res) => {
+        //console.log(res);
+        //console.log(res.data.results);
+        const shipsCall = res.data.results;
+        setShips(shipsCall.map( (ship, key) =>  <ListShip ship={ship} key={key} /> ));
+      })
+  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <GlobalStyle />
+      <header>
+        <a href="" className='logoHead'><img src={logoStarWars} alt="Star Wars Logo" /></a>
       </header>
-    </div>
+
+      {ships}
+
+    </>
   );
 }
 
