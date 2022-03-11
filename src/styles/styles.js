@@ -1,5 +1,12 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
+export const Wrapper = styled.div`
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+`;
 
 export const GlobalStyle = createGlobalStyle`
 
