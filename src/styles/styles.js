@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  padding-bottom: 45px;
 `;
 
 export const GlobalStyle = createGlobalStyle`
