@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import {Wrapper} from '../styles/styles';
 
@@ -16,7 +16,7 @@ const Home = (_) => {
 
       <Wrapper>
         
-        <img src={home} alt="Star Wars" />
+        <img src={home} alt="Star Wars" className="imageDest"/>
         
         <h1 className="t-t1">Star Wars Ships Wiki</h1>
         

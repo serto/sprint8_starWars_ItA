@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from 'react-router-dom';
 import Header from "../components/header/header";
 import {Wrapper} from '../styles/styles';
-import { DetailStyle } from '../styles/styles'
+import { DetailStyle } from '../styles/styles';
 
 import axios from "axios";
 
@@ -48,20 +48,32 @@ const Detalle = (_) => {
 
   useEffect( async () => {
 
+
+    if(pilotsUrls) {
+      const data = async () => {
+        return await Promise.all(pilotsUrls.map(async (el) => {
+          const r = await axios.get(el)
+          //console.log(r.data.name);
+          return r.data.name;
+        }))
+      };
+    
+      const valuesPilots = await data();
+      setPilots(valuesPilots);
+
+    }
+
     if(filmsUrls) {
       const data = async () => {
-        await Promise.all(filmsUrls.map(async (el) => {
+        return await Promise.all(filmsUrls.map(async (el) => {
           const r = await axios.get(el)
-          console.log(r.data.title);
+          //console.log(r.data.title);
           return r.data.title;
         }))
       };
     
-     
-      console.log('data final:' , data());
       const valuesFilms = await data();
-      console.log('valors : ',valuesFilms);
-      //setFilms(valuesFilms);
+      setFilms(valuesFilms);
 
     }
 

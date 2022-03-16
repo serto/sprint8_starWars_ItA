@@ -9,6 +9,14 @@ export const Wrapper = styled.div`
   flex-direction: column;
   margin: 0 auto;
   padding-bottom: 45px;
+
+  &.wrapperLogin {
+    display: flex;
+    flex-direction: row;
+    ${mobile} {
+      flex-direction: column;
+    }
+  }
 `;
 
 export const GlobalStyle = createGlobalStyle`
@@ -33,10 +41,61 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .headerSign {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    ${mobile} {
+      top: 10px;
+      right: initial;
+      left: 50%;
+      margin-left: -50px;
+    }
+
+    &__nameUser {
+      letter-spacing: 0.03em;
+      color: #ccc;
+      font-size: 0.75em;
+    }
+
+    &__links {
+      letter-spacing: 0.03em;
+      color: #ccc;
+      font-size: 0.75em;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .imageDest {
+    border-bottom: 4px solid #9e4f60;
+    width: 100%;
+    height: auto;
+    &__small {
+      max-width: 250px;
+      ${mobile} {
+        width: 100%;
+        max-width: initial;
+      }
+    }
+  }
+
+
   .t-t1 {
     font-size: 2em;
     letter-spacing: 0.03em;
     text-align: center;
+    text-transform: uppercase;
+  }
+
+  .t-t2 {
+    font-size: 1.75em;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
   }
 
@@ -133,6 +192,70 @@ export const DetailStyle = createGlobalStyle`
           text-transform: uppercase;
         }
       }
+    }
+  }
+
+`;
+
+export const FormStyle = createGlobalStyle`
+
+
+  .loginBox {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    ${mobile} {
+      width: 100%;
+    }
+    &--second {
+      align-items: flex-end;
+      ${mobile} {
+        align-items: flex-start;
+      }
+    }
+  }
+
+
+  form {
+
+    label {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 12px;
+
+      span {
+        width: 95px;
+        font-weight: bold;
+      }
+
+      input {
+        border: 1px solid #ccc;
+        background-color: #0a0b0b;
+        color: #ccc;
+        padding: 8px 4px;
+        min-width: 200px;
+      }
+    }
+    button {
+      border: 1px solid #ccc;
+      color: #ccc;
+      background-color: #0a0b0b;
+      font-weight: bold;
+      padding: 12px 24px;
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+        background-color: #4c5353;
+      }
+    }
+
+    .errorForm {
+      color: red;
+      font-size: 0.85em;
     }
   }
 
