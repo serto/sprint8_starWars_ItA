@@ -8,12 +8,19 @@ export const MenuStyle = styled.div`
   a {
     display: inline-block;
     padding: 8px 12px;
-    color: white;
+    color:  #ccc;
     text-decoration: none;
+    font-weight: bold;
+
+    border-left: 1px solid #ccc;
+
     &:hover {
-      font-weight: bold;
       color: white;
       text-decoration: none;
+    }
+
+    &:last-child {
+      border-right: 1px solid #ccc;
     }
   }
 `;

@@ -11,7 +11,6 @@ export const ListShipStyle = styled.div`
     font-weight: 200;
   }
   a {
-    border: 1px solid yellow;
     display: inline-block;
     width: 100%;
     color: white;
