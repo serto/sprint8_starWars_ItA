@@ -1,5 +1,5 @@
 
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { ListShipStyle } from './listShip.style';
 import { Link } from 'react-router-dom';
 
