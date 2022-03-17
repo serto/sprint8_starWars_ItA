@@ -38,6 +38,7 @@ const LoginSign = (_) => {
       localStorage.setItem('userSWMail', email);
       setErrorLogin(false);
       navigate(process.env.PUBLIC_URL + '/');
+      console.log('user logged');
     }
     else {
       setErrorLogin(true);
@@ -53,7 +54,10 @@ const LoginSign = (_) => {
     
     const newUsertoSave = [...arrayUsers, newUser];
     localStorage.setItem('usersStarwars', JSON.stringify(newUsertoSave));
+    localStorage.setItem('userSWLogged', JSON.stringify(true));
+    localStorage.setItem('userSWMail', emailNew);
     navigate(process.env.PUBLIC_URL + '/');
+    console.log('user created');
 
   };
 

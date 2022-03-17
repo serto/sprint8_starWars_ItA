@@ -99,6 +99,14 @@ export const GlobalStyle = createGlobalStyle`
     text-transform: uppercase;
   }
 
+  .t-t3 {
+    font-size: 1.1em;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    border-bottom: 4px solid #9e4f60;
+  }
+
 `;
 
 export const DetailStyle = createGlobalStyle`
@@ -122,6 +130,7 @@ export const DetailStyle = createGlobalStyle`
       grid-gap: .5rem;
       grid-template-columns: repeat(4, 24%);
       padding: 1em;
+      margin-bottom: 24px;
       ${mobile} {
         grid-template-columns: repeat(2, 48%);
       }
@@ -130,6 +139,7 @@ export const DetailStyle = createGlobalStyle`
     &__imageComp {
       display: flex; 
       flex-direction: row;
+      margin-bottom: 24px;
       ${mobile} {
         flex-direction: column;
       }

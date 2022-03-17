@@ -100,12 +100,12 @@ const Detalle = (_) => {
           </div>
         </div>
 
-        <h3>PILOTS</h3>
+        <h3 className="t-t3">PILOTS</h3>
         <div className="groupCards">
           {pilots.map( (element, key) => <CardStarWars name={element.name} url={element.url} typeCard='pilot' key={key} />)}
         </div>
         
-        <h3>Movies</h3>
+        <h3 className="t-t3">Movies</h3>
         <div className="groupCards">
           {films.map( (element, key) => {
             const number = Math.random() +1;
@@ -114,7 +114,7 @@ const Detalle = (_) => {
             )}
         </div>
 
-        <h3>Properties</h3>
+        <h3 className="t-t3">Properties</h3>
         
         <ul className="detail__props">
           
