@@ -46,9 +46,7 @@ const List = (_) => {
   }, []);
 
   useEffect(() => {
-    console.log('ships useeffect :',ships)
-
-    console.log('nextShips useeffect :',nextShips);
+    
     const onScroll = () => {
       if( (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) && (nextShips) ){
         callNextShips();

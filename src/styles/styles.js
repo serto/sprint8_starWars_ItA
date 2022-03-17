@@ -117,6 +117,16 @@ export const DetailStyle = createGlobalStyle`
       }
     }
 
+    .groupCards {
+      display: grid;
+      grid-gap: .5rem;
+      grid-template-columns: repeat(4, 24%);
+      padding: 1em;
+      ${mobile} {
+        grid-template-columns: repeat(2, 48%);
+      }
+    }
+
     &__imageComp {
       display: flex; 
       flex-direction: row;

@@ -3,8 +3,11 @@ import React, { useState, useEffect } from "react";
 
 import { Link, useParams } from 'react-router-dom';
 import Header from "../components/header/header";
-import {Wrapper} from '../styles/styles';
-import { DetailStyle } from '../styles/styles';
+import CardStarWars from "../components/card/card";
+
+import {Wrapper, DetailStyle} from '../styles/styles';
+
+
 
 import axios from "axios";
 
@@ -48,13 +51,12 @@ const Detalle = (_) => {
 
   useEffect( async () => {
 
-
     if(pilotsUrls) {
       const data = async () => {
         return await Promise.all(pilotsUrls.map(async (el) => {
           const r = await axios.get(el)
-          //console.log(r.data.name);
-          return r.data.name;
+          //console.log(r.data);
+          return r.data;
         }))
       };
     
@@ -67,8 +69,8 @@ const Detalle = (_) => {
       const data = async () => {
         return await Promise.all(filmsUrls.map(async (el) => {
           const r = await axios.get(el)
-          //console.log(r.data.title);
-          return r.data.title;
+          //console.log(r.data);
+          return r.data;
         }))
       };
     
@@ -97,9 +99,26 @@ const Detalle = (_) => {
             <h4>{classShip}</h4>
           </div>
         </div>
+
+        <h3>PILOTS</h3>
+        <div className="groupCards">
+          {pilots.map( (element, key) => <CardStarWars name={element.name} url={element.url} typeCard='pilot' key={key} />)}
+        </div>
+        
+        <h3>Movies</h3>
+        <div className="groupCards">
+          {films.map( (element, key) => {
+            const number = Math.random() +1;
+            return <CardStarWars name={element.title} url={element.url} typeCard='movie' key={key+number} />
+          }
+            )}
+        </div>
+
+        <h3>Properties</h3>
+        
         <ul className="detail__props">
-          <li><span>Films :</span> {films}</li>
-          <li><span>Pilots :</span> {pilots}</li>
+          
+   
           <li><span>HyperVelocity:</span> {hyper}</li>
           <li><span>Cost in credits:</span> {cost}</li>
           <li><span>Max atmosphering speed:</span> {atSpedd}</li>
