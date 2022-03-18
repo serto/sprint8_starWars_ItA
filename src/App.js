@@ -1,6 +1,4 @@
 
-import { useState, useEffect } from "react";
-
 import RoutesApp from './application/routes';
 
 const App = (_) => {

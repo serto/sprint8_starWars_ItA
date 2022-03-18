@@ -1,5 +1,6 @@
 
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import { AppContext } from '../application/provider';
 
 import {Wrapper, FormStyle} from '../styles/styles';
 
@@ -11,13 +12,14 @@ import { useNavigate } from "react-router-dom";
 
 const LoginSign = (_) => {
 
+  const [state, setState] = useContext(AppContext);
+
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [errorLogin, setErrorLogin] = useState(false)
 
   const [emailNew, setEmailNew] = useState('');
   const [passNew, setPassNew] = useState('');
-
 
   const users = JSON.parse(localStorage.getItem("usersStarwars"));
   const [arrayUsers, setArrayUsers] = useState(users ? users : []);
@@ -38,6 +40,7 @@ const LoginSign = (_) => {
       localStorage.setItem('userSWMail', email);
       setErrorLogin(false);
       navigate(process.env.PUBLIC_URL + '/');
+      setState(true);
       console.log('user logged');
     }
     else {
@@ -57,6 +60,7 @@ const LoginSign = (_) => {
     localStorage.setItem('userSWLogged', JSON.stringify(true));
     localStorage.setItem('userSWMail', emailNew);
     navigate(process.env.PUBLIC_URL + '/');
+    setState(true);
     console.log('user created');
 
   };

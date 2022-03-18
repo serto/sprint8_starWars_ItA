@@ -47,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
     right: 20px;
 
     ${mobile} {
-      top: 10px;
+      top: 5px;
       right: initial;
       left: 50%;
       margin-left: -50px;
@@ -68,6 +68,18 @@ export const GlobalStyle = createGlobalStyle`
       &:hover {
         color: white;
         text-decoration: none;
+      }
+    }
+
+    &__logout {
+      letter-spacing: 0.03em;
+      color: #ccc;
+      font-size: 0.75em;
+      border: none;
+      background: none;
+      cursor: pointer;
+      &:hover {
+        color: white;
       }
     }
   }
