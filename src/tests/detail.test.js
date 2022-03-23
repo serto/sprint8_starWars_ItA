@@ -16,7 +16,7 @@ describe('Detail comp', () => {
     jest.restoreAllMocks();
   });
 
-  test('must display name of ship', async () => {
+  it('must display name of ship', async () => {
 
     const contextValues = [{state: false}];
 
