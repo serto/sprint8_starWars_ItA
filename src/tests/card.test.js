@@ -3,7 +3,7 @@ import { screen, render } from '@testing-library/react';
 
 import CardStarWars from '../components/card/card';
 
-describe('testing Card', () => {
+describe('Card comp', () => {
 
   const urlFake='http://wwww.test.com/images/7/';
   const nameFake='Han';

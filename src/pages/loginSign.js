@@ -105,7 +105,7 @@ const LoginSign = (_) => {
 
             {errorLogin ? <p className="errorForm">You are not registered, padawan</p>: ''}
 
-            <button onClick={login}>Log in</button>
+            <button onClick={login}>Enter</button>
 
           </form>
         </div>
@@ -141,7 +141,7 @@ const LoginSign = (_) => {
               />
             </label>
 
-            <button onClick={createUser}>Create</button>
+            <button onClick={createUser}>Register</button>
 
           </form>
         </div>
